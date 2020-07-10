@@ -32,7 +32,7 @@
     // Get Single User
     public function read_single() {
           // Create query
-          $query = 'SELECT u.firstname FROM ' . $this->table . '
+          $query = 'SELECT * FROM ' . $this->table . '
                                     WHERE
                                       users.id = ?
                                     LIMIT 0,1';

@@ -22,9 +22,9 @@
   // Create array
   $user_arr = array(
     'id' => $user->id,
-    'title' => $user->title,
-    'body' => $user->body,
-    'category_name' => $user->category_name
+    'firstname' => $user->firstname,
+    'lastname' => $user->lastname,
+    'phonenumber' => $user->phonenumber
   );
 
   // Make JSON
