@@ -5,14 +5,9 @@
 
   include_once '../../config/Database.php';
   include_once '../../models/User.php';
-  //require 
-
-  // Instantiate DB & connect
-  $database = new Database('localhost', 'api_db', 'root', '');
-  $db = $database->connect();
 
   // Instantiate blog post object
-  $user = new User($db);
+  $user = new User();
 
   // Blog post query
   $result = $user->read();

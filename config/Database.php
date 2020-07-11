@@ -1,23 +1,20 @@
 <?php 
-  class Database {
+include_once 'DInterface.php';
+
+  class ApiDatabase implements ApiDbInterface{
     // DB Params
-    private $host;
-    private $db_name;
-    private $username;
-    private $password;
-    private $conn;
+    protected $host;
+    protected $db_name;
+    protected $username;
+    protected $password;
+    public $conn;
 
-
-    // Constructor DB
-    public function __construct($host, $db_name, $username, $password) {
+    // DB Connect
+    public function connect($host, $db_name, $username, $password) {
       $this->host = $host;
       $this->db_name = $db_name;
       $this->username = $username;
       $this->password = $password;
-    }
-
-    // DB Connect
-    public function connect() {
       $this->conn = null;
 
       try { 
@@ -30,3 +27,7 @@
       return $this->conn;
     }
   }
+
+  $apiDB = new ApiDatabase();
+  $apiDB->connect('localhost', 'api_db', 'root', '');
+?>

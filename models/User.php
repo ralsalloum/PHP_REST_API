@@ -1,7 +1,11 @@
 <?php 
+
+include_once '../../config/Database.php';
+
   class User {
     // DB stuff
     private $conn;
+    private $db;
     private $table = 'users';
 
     // User Properties
@@ -11,8 +15,9 @@
     public $phonenumber;
 
     // Constructor with DB
-    public function __construct($db) {
-      $this->conn = $db;
+    public function __construct() {
+      $this->db = new ApiDatabase();
+      $this->db->connect('localhost', 'api_db', 'root', '');
     }
 
     // Get Users
@@ -21,7 +26,7 @@
       $query = 'SELECT * FROM ' . $this->table;
       
       // Prepare statement
-      $stmt = $this->conn->prepare($query);
+      $stmt = $this->db->conn->prepare($query);
 
       // Execute query
       $stmt->execute();
@@ -38,7 +43,7 @@
                                     LIMIT 0,1';
 
           // Prepare statement
-          $stmt = $this->conn->prepare($query);
+          $stmt = $this->db->conn->prepare($query);
 
           // Bind ID
           $stmt->bindParam(1, $this->id);
@@ -61,7 +66,7 @@
           $query = 'INSERT INTO ' . $this->table . ' SET firstname = :firstname, lastname = :lastname, phonenumber = :phonenumber';
 
           // Prepare statement
-          $stmt = $this->conn->prepare($query);
+          $stmt = $this->db->conn->prepare($query);
 
           // Clean data
           //$this->id = htmlspecialchars(strip_tags($this->id));

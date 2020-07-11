@@ -8,13 +8,8 @@
   include_once '../../config/Database.php';
   include_once '../../models/User.php';
 
-  // Instantiate DB & connect
-  $database = new Database('localhost', 'api_db', 'root', '');
-  $db = $database->connect();
-  //$db2 = Database()->conncet()
-
   // Instantiate blog post object
-  $user = new User($db);
+  $user = new User();
 
   // Get raw posted data
   $data = json_decode(file_get_contents("php://input"));
