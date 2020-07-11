@@ -8,7 +8,7 @@
   //require 
 
   // Instantiate DB & connect
-  $database = new Database();
+  $database = new Database('localhost', 'api_db', 'root', '');
   $db = $database->connect();
 
   // Instantiate blog post object

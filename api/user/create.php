@@ -9,8 +9,9 @@
   include_once '../../models/User.php';
 
   // Instantiate DB & connect
-  $database = new Database();
+  $database = new Database('localhost', 'api_db', 'root', '');
   $db = $database->connect();
+  //$db2 = Database()->conncet()
 
   // Instantiate blog post object
   $user = new User($db);
