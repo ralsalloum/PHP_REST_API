@@ -1,6 +1,6 @@
 <?php 
 
-include_once '../../config/Database.php';
+include_once '../../config/DInterface.php';
 
   class User {
     // DB stuff
@@ -15,8 +15,8 @@ include_once '../../config/Database.php';
     public $phonenumber;
 
     // Constructor with DB
-    public function __construct() {
-      $this->db = new ApiDatabase();
+    public function __construct(ApiDbInterface $db) {
+      $this->db = $db;
       $this->db->connect('localhost', 'api_db', 'root', '');
     }
 

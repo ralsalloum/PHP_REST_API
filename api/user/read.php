@@ -7,7 +7,7 @@
   include_once '../../models/User.php';
 
   // Instantiate blog post object
-  $user = new User();
+  $user = new User($apiDB);
 
   // Blog post query
   $result = $user->read();

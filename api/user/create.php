@@ -9,7 +9,7 @@
   include_once '../../models/User.php';
 
   // Instantiate blog post object
-  $user = new User();
+  $user = new User($apiDB);
 
   // Get raw posted data
   $data = json_decode(file_get_contents("php://input"));

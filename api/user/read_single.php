@@ -7,7 +7,7 @@
   include_once '../../models/User.php';
 
   // Instantiate blog post object
-  $user = new User();
+  $user = new User($apiDB);
 
   // Get ID
   $user->id = isset($_GET['id']) ? $_GET['id'] : die();
