@@ -1,5 +1,5 @@
-# hello-world
+# PHP_REST_API project
 
-Hi there!
+This project uses PHP without any framworks to implement endpoint APIs (JSON).
 
-I like programming. Hope to stay in touch
+The project focus on two principles of SOLID. Single Responsibility, and Dependency Injection.
